@@ -1,0 +1,8 @@
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Sample toast</text>
+            <text>Yo time to close your eyes</text>
+        </binding>
+    </visual>
+</toast>

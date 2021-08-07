@@ -14,3 +14,12 @@ get-StartApps <App Name>
 #ex.
 get-StartApps python
 ```
+
+
+# Support
+#### Windows
+```
+Edition	        Windows 10 Home Single Language
+Version	        20H2
+OS build        19042.1110
+```

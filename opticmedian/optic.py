@@ -42,13 +42,10 @@ class Optic:
 		x_doc = dom.XmlDocument()
 		x_doc.load_xml(self.xml_dom)
 
-		start_time = time.time()
 		while True:
-			end_time = time.time()
-			if end_time - start_time > self.time_interval:
-				print("Notified")
-				notifier.show(notifications.ToastNotification(x_doc))
-				start_time = time.time()
+			time.sleep(self.time_interval)
+			print("Notified")
+			notifier.show(notifications.ToastNotification(x_doc))
 
 
 def parse_args():
@@ -65,6 +62,6 @@ def parse_args():
 
 if __name__ == "__main__":
 	args = parse_args()
-	time_interval = args.interval
-	optic_fiber = Optic("config/optics.yml", time_interval=time_interval)
+	interval = args.interval
+	optic_fiber = Optic("config/optics.yml", time_interval=interval)
 	optic_fiber.push_notification()

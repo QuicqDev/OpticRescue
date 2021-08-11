@@ -16,7 +16,7 @@ class Optic:
 	"""
 	head class
 	"""
-	def __init__(self, conf_path, time_interval=None):
+	def __init__(self, conf_path, time_interval=None, stop_interval=None):
 		self.config = OmegaConf.load(conf_path)
 		self.appid = self.config.default.AUMID
 		self.xml_dom = self.config.default.XMLCONTENT
@@ -24,6 +24,11 @@ class Optic:
 			self.time_interval = self.config.default.TIMEINTERVAL
 		else:
 			self.time_interval = time_interval
+
+		if stop_interval is None:
+			self.stop_iter = self.config.default.STOPINTERTVAL
+		else:
+			self.stop_iter = stop_interval
 
 	def read_conf(self):
 		"""
@@ -33,6 +38,7 @@ class Optic:
 		print(self.appid)
 		print(self.xml_dom, type(self.xml_dom))
 
+	@profile
 	def push_notification(self):
 		"""
 		:return:
@@ -42,10 +48,14 @@ class Optic:
 		x_doc = dom.XmlDocument()
 		x_doc.load_xml(self.xml_dom)
 
+		counter = 0
 		while True:
 			time.sleep(self.time_interval)
 			print("Notified")
 			notifier.show(notifications.ToastNotification(x_doc))
+			counter += 1
+			if counter > self.stop_iter:
+				break
 
 
 def parse_args():
@@ -55,7 +65,7 @@ def parse_args():
 	"""
 	parser = argparse.ArgumentParser("Optic Rescue Activate")
 	parser.add_argument("--interval", default=1200, type=int, help="Time interval for notifications")
-	parser.add_argument("--stop", type=int, default=100)
+	parser.add_argument("--stop_iterations", type=int, default=1000, help="Stop after this many iterations")
 
 	return parser.parse_args()
 
@@ -63,5 +73,6 @@ def parse_args():
 if __name__ == "__main__":
 	args = parse_args()
 	interval = args.interval
-	optic_fiber = Optic("config/optics.yml", time_interval=interval)
+	stop_iterations = args.stop_iterations
+	optic_fiber = Optic("config/optics.yml", time_interval=interval, stop_interval=stop_iterations)
 	optic_fiber.push_notification()

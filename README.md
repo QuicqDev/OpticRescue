@@ -1,6 +1,11 @@
 # OpticRescue
-Save your precious eyes from strain
+Notification Application for something you want a constant reminder for.
 
+#### Example Features: 
+1. Constant reminder for taking a break from screen when you're in front of screen for too long
+2. Push commits regularly or in regular intervals
+3. Reminder to check logs/some important metrics
+4. Drink water in intervals
 
 ### Application User Model ID
 [Official Docs](https://docs.microsoft.com/en-us/windows/configuration/find-the-application-user-model-id-of-an-installed-app)
@@ -40,3 +45,10 @@ Edition	        Windows 10 Home Single Language
 Version	        20H2
 OS build        19042.1110
 ```
+
+#### Linux
+(In progress)
+
+
+# ChangeLog
+

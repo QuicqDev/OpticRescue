@@ -7,19 +7,6 @@ Notification Application for something you want a constant reminder for.
 3. Reminder to check logs/some important metrics
 4. Drink water in intervals
 
-### Application User Model ID
-[Official Docs](https://docs.microsoft.com/en-us/windows/configuration/find-the-application-user-model-id-of-an-installed-app)
-```
-#finding all AUMIDs
-#open powershell as Admin
-get-StartApps
-
-#get specific program's APPID
-get-StartApps <App Name>
-#ex.
-get-StartApps python
-```
-
 ## Profiling
 ### Time Profiling
 ![Time Profile](statics/time_profilev0-1.jpg)
@@ -50,5 +37,5 @@ OS build        19042.1110
 (In progress)
 
 
-# ChangeLog
 
+## Contributions : [CONTRIBUTING](CONTRIBUTING.md)

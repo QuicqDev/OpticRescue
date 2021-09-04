@@ -38,7 +38,6 @@ class Optic:
 		print(self.appid)
 		print(self.xml_dom, type(self.xml_dom))
 
-	@profile
 	def push_notification(self):
 		"""
 		:return:
@@ -64,7 +63,7 @@ def parse_args():
 	:return:
 	"""
 	parser = argparse.ArgumentParser("Optic Rescue Activate")
-	parser.add_argument("--interval", default=1200, type=int, help="Time interval for notifications")
+	parser.add_argument("--interval", default=1200, type=int, help="Time interval for notifications in secs")
 	parser.add_argument("--stop_iterations", type=int, default=1000, help="Stop after this many iterations")
 
 	return parser.parse_args()

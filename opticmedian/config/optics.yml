@@ -10,3 +10,14 @@ default:
         </visual>
     </toast>
   TIMEINTERVAL: 10
+
+plyer:
+  EYES:
+    title: "Time to relax your EYES"
+    message: "Take a break, look at distant things, move your eyes, rest a bit"
+    timeout: 5
+    ticker: "Notification ticker"
+    app_icon: "statics/Icons/eyes/*"
+    toast: False
+
+  APP_NAME: "OpticRescue"

@@ -1,5 +1,7 @@
 # Contributing to this repository
 
+Thanks for coming to this repo. Please read the below general guidelines to commit
+
 ## Getting Started
 
 Before you begin:          

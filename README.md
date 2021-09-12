@@ -38,4 +38,5 @@ OS build        19042.1110
 
 
 
-## Contributions : [CONTRIBUTING](CONTRIBUTING.md)
+## Contributions
+Please refer these guidelines : [CONTRIBUTING](CONTRIBUTING.md)
